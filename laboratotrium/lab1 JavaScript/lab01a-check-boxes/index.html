@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+<form id = "form" onsubmit ="return sprawdz();" method="get">
+    <p><input type="checkbox" id="Checkbox1" value="Checkbox1" name="lang" /> Język 1 <span id="Span1">0</span></p>
+    <p><input type="checkbox" id="Checkbox2" value="Checkbox2" name="lang" /> Język 2 <span id="Span2">0</span></p>
+    <p><input type="checkbox" id="Checkbox3" value="Checkbox3" name="lang" /> Język 3 <span id="Span3">0</span></p>
+    <p><input type="checkbox" id="Checkbox4" value="Checkbox4" name="lang" /> Język 4 <span id="Span4">0</span></p>
+    <p><input type="checkbox" id="Checkbox5" value="Checkbox5" name="lang" /> Język 5 <span id="Span5">0</span></p>
+    
+    <div class="send"><input type="submit" value="Wyślij formularz"></div>
+</form> 
+
+    
+
+  <script type="text/javascript">
+      (function() {
+          var checked = [];
+
+          document.getElementById("Checkbox1").addEventListener("click",zmien);
+          document.getElementById("Checkbox2").addEventListener("click",zmien);
+          document.getElementById("Checkbox3").addEventListener("click",zmien);
+          document.getElementById("Checkbox4").addEventListener("click",zmien);
+          document.getElementById("Checkbox5").addEventListener("click",zmien);
+
+  function zmien() {
+    if (this.checked) {
+        checked.push(this);
+    } else {
+        var index = checked.indexOf(this);
+        var chbox = checked.splice(index,1)[0];
+        chbox.nextElementSibling.className = "bialy";
+    }
+    odswiez();
+  }
+
+  function odswiez() {
+    for (var i = 0; i < checked.length; i++) {
+        if (i < 3) {
+            checked[i].nextElementSibling.className = "zielony";
+        } else {
+            checked[i].nextElementSibling.className = "czerwony";
+        }
+    }
+
+  }
+
+}());
+         
+
+function sprawdz() {
+    var ileZaznaczonych = 0;
+    var formularz = this.form;
+    var checkboxy = formularz.lang;
+ 
+    for (x=0; x<checkboxy.length; x++) {
+        if (checkboxy[x].checked) {
+            ileZaznaczonych++;
+        }
+    }
+    if (ileZaznaczonych!=3) {
+        alert('Wybrałeś ' +ileZaznaczonych+' , a musisz wybrać 3');
+    } else {
+        alert('Wybrałeś ' +ileZaznaczonych+' . Formularz został wysłany!');
+    }
+}
+    </script>
+
+</body>
+</html>

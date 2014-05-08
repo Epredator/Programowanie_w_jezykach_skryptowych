@@ -1,0 +1,40 @@
+p {
+  padding: 0;
+  margin: 0;
+  font-family: 'Century Gothic';
+  font-size:larger;
+  margin:5px;
+  padding:5px;
+}
+
+.zielony{
+  background-color:green;
+  border:1px solid black;
+  border-radius:100%;
+  padding:5px;
+  margin:5px;
+ 
+  
+}
+
+.bialy{
+  background-color:white;
+  border:1px solid white;
+  border-radius:100%;
+  padding:5px;
+  margin:5px;
+}
+
+
+.czerwony{
+  background-color:red;
+  border:1px solid black;
+  border-radius:100%;
+  padding:5px;
+  margin:5px;
+}
+
+
+.send {
+margin-top: 20px;
+}
