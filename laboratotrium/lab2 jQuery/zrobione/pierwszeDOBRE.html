@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <title></title>
+</head>
+<body>
+
+<table>
+<script type = "text/javascript">
+$(function(){
+	var t = $("#tab tbody");
+	for(i=0; i<10; i++) t.append('<tr></tr>');
+		$('tr').each(function(){
+			for(j=0; j<10; j++) $(this).append('<td></td>');
+			});
+			
+			$('td').each(function(){ 
+				var col = $(this).parent().children().index($(this));
+				var row = $(this).parent().parent().children().index($(this).parent());
+				$(this).text("rgb(" + 25*row+" , " +25*col + ",255");
+					$(this).css("background-color"$(this).text());
+			});	
+			$('td').click(function(){
+			$('body').css("background-color", $(this).text());
+			});	
+
+			$('td').mouseover(function(){
+				$(this).css("background-color", $(this).text());
+			});
+
+			$('td').mouseout(function(){
+				$(this).css("background-color", $(this).text());
+			});
+
+		});
+
+
+/*
+function(){rgb.append()}
+
+
+
+var data = ['rgb', 'rgb', 'rgb', 'rgb', 'rgb', 'rgb', 'rgb', 'rgb'
+,'rgb', 'rgb', 'rgb', 'rgb', 'rgb', 'rgb', 'rgb', 'rgb',
+'rgb', 'rgb', 'rgb', 'rgb', 'rgb', 'rgb', 'rgb', 'rgb',
+'rgb', 'rgb', 'rgb', 'rgb'];
+
+var numCols = 4;           
+
+
+$.each(data, function(i) {
+  if(!(i%numCols)) tRow = $('<tr>');
+
+  tCell = $('<td>').html(data[i]);
+
+  $('table').append(tRow.append(tCell));
+});
+*/
+</script>
+
+</table>
+
+</body>
+</html>

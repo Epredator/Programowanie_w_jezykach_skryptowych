@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+    </script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        $(function () {
+            var colNum = 10;
+            var rowNum = 10;
+
+            var t = $("#tab tbody");
+            for (i = 0; i < colNum; i++) t.append('<tr></tr>');
+            $('tr').each(function () {
+                for (j = 0; j < rowNum; j++) $(this).append('<td></td>');
+            });
+            $('td').each(function () {
+                var col = $(this).index();
+                var row = $(this).parent().parent().children().index($(this).parent());
+                $(this).text("rgb(" + 25 * row + "," + 25 * col + ",255");
+                $(this).css("background-color", $(this).text());
+            });
+            $('td').click(function () {
+                $("body").css("background-color", $(this).text());
+            }); $('td').mouseover(function () {
+                $(this).css("background-color", "rgb(255,0,0)");
+            }); $('td').mouseout(function () {
+                $(this).css("background-color", $(this).text());
+            });
+        });
+    </script>
+
+<h1>Tablica</h1>
+<table id="tab" border="1">
+<tbody></tbody>
+</table>
+
+
+
+</body>
+</html>

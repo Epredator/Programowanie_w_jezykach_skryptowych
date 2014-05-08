@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="styleDrugie.css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <title></title>
+</head>
+<body>
+<script type="text/javascript">
+$(function(){ 
+$("td.suma").each(function(){ 
+ 	$(this).text("OK");
+ 	var suma = 0;
+
+ 	$(this).prevAll().filter(".punkty").each(function(){ 
+ 		suma = suma + parseInt($(this).text());
+ 	});
+ 		$(this).text(suma);
+ 	});
+
+
+	$("td.punkty").click(function() { 
+ 		var t = $(this).text();
+ 		$(this).html("<input type=text id=ttt value="+t+">");
+	 });
+
+	$("#ttt").blur(function(){ 
+		var t = $(this).value;
+		alert(t);
+	 });
+
+	$("tr:odd").css( "background-color", "#339933" );
+	$("tr:even").css( "background-color", "#F0F0F0  " );
+
+
+
+
+
+
+ });
+</script>
+<table>
+ <tr>
+  <td>
+   <table class="tabela">
+    <thead>
+     <tr>
+      <th>Nazwisko i imię</th>
+      <th>Nr indeksu</th>
+
+      <th>Python</th>
+      <th>jQuery</th>
+      <th>Flex</th>
+      <th>Suma</th>
+     </tr>
+    </thead>
+    <tbody>
+       <tr>
+             <td>Kowalski Jan</td>
+             <td>1234567</td>
+             <td class="punkty">13</td>
+             <td class="punkty">23</td>
+             <td class="punkty">0</td>
+             <td class="suma">-</td>
+       </tr>
+       <tr>
+             <td>Nowak Adam</td>
+             <td>000911</td>
+             <td class="punkty">100</td>
+             <td class="punkty">30</td>
+             <td class="punkty">50</td>
+             <td class="suma">-</td>
+       </tr>
+    </tbody>
+   </table>
+  </td>
+  <td>
+   <button>Dodaj osobę</button>
+  </td>
+ </tr>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="yui3-js-enabled" dir="ltr" xml:lang="pl" lang="pl"><div class="" id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div><head>
+  <title>PwJS - zaoczne: Zadanie (2.2): Laboratorium 3b - w domu - przetwarzanie plików w Pythonie</title>
+  <link rel="shortcut icon" href="http://weeia.edu.p.lodz.pl/theme/image.php/wikamp/theme/1393243902/favicon">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="moodle, PwJS - zaoczne: Zadanie (2.2): Laboratorium 3b - w domu - przetwarzanie plików w Pythonie">
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"http:\/\/weeia.edu.p.lodz.pl","sesskey":"LjisMwSMdY","loadingicon":"http:\/\/weeia.edu.p.lodz.pl\/theme\/image.php\/wikamp\/core\/1393243902\/i\/loading_small","themerev":"1393243902","slasharguments":1,"theme":"wikamp","jsrev":"1393243902","svgicons":true};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin');}};
+var yui2ConfigFn = function(me) {var p = me.path, b = me.name.replace(/^moodle-/,'').split('-', 3), n = b.pop();if (/(skin|core)/.test(n)) {n = b.pop();me.type = 'css';};me.path = b.join('-')+'/'+n+'/'+n;if(me.type !== 'css'){me.path=me.path+'-min';};me.path=me.path+'.'+me.type;};
+YUI_config = {"debug":false,"base":"http:\/\/weeia.edu.p.lodz.pl\/lib\/yuilib\/3.9.1\/build\/","comboBase":"http:\/\/weeia.edu.p.lodz.pl\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"http:\/\/weeia.edu.p.lodz.pl\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"http:\/\/weeia.edu.p.lodz.pl\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"http:\/\/weeia.edu.p.lodz.pl\/theme\/yui_combo.php?moodle\/1393243902\/","combine":true,"comboBase":"http:\/\/weeia.edu.p.lodz.pl\/theme\/yui_combo.php?","ext":false,"root":"moodle\/1393243902\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"modules":{"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification","json-parse","widget-position","widget-position-align","event-outside","cache"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-notification":{"requires":["base","node","panel","event-key","dd-plugin"]},"moodle-core-formchangechecker":{"requires":["base","event-focus"]},"moodle-core-formautosubmit":{"requires":["base","event-key"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-calendar-eventmanager":{"requires":["base","node","event-mouseenter","overlay","moodle-calendar-eventmanager-skin"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-block_navigation-navigation":{"requires":["base","core_dock","io-base","node","dom","event-custom","event-delegate","json-parse"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-notification"]},"moodle-editor_tinymce-collapse":{"requires":["base","node","dom"]},"moodle-theme_bootstrapbase-bootstrap":{"requires":["node","selector-css3"]}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"http:\/\/weeia.edu.p.lodz.pl\/lib\/javascript.php\/1393243902\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker"]},"core_dock":{"name":"core_dock","fullpath":"http:\/\/weeia.edu.p.lodz.pl\/lib\/javascript.php\/1393243902\/blocks\/dock.js","requires":["base","node","event-custom","event-mouseenter","event-resize","escape"]}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+<link rel="stylesheet" type="text/css" href="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/yui_combo_002.css"><script type="text/javascript" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/yui_combo_005.php"></script><script type="text/javascript" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/jquery-1.js"></script>
+<link href="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/yui_combo.css" id="yui_3_9_1_2_1395502917067_5" rel="stylesheet" charset="utf-8"><script async="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/yui_combo_006.php" id="yui_3_9_1_2_1395502917067_6" charset="utf-8"></script><script async="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/yui_combo_004.php" id="yui_3_9_1_2_1395502917067_7" charset="utf-8"></script><script async="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/dock.js" id="yui_3_9_1_2_1395502917067_20" charset="utf-8"></script><script async="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/yui_combo_003.php" id="yui_3_9_1_2_1395502917067_21" charset="utf-8"></script><script async="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/yui_combo_002.php" id="yui_3_9_1_2_1395502917067_176" charset="utf-8"></script><script async="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/yui_combo.php" id="yui_3_9_1_2_1395502917067_182" charset="utf-8"></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/all.css">
+<script type="text/javascript" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/javascript-static.js"></script>
+<script type="text/javascript" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/head"></script>
+  <link rel="stylesheet" type="text/css" href="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/general.css">
+  <script type="text/javascript" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/dyna.js">
+  </script>
+</head>
+
+<body id="page-mod-assignment-view" class="format-topics  path-mod path-mod-assignment gecko dir-ltr lang-pl yui-skin-sam yui3-skin-sam weeia-edu-p-lodz-pl pagelayout-incourse course-1156 context-26839 cmid-2689 category-34 side-pre-only jsenabled">
+
+<div class="skiplinks"><a class="skip" href="#maincontent">Przejdź do głównej zawartości</a></div>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+<div id="page-wrapper">
+  <div id="page" class="clearfix">
+
+    <div id="page-header" class="clearfix">
+              <div class="headermenu">
+          <div class="logininfo">Jesteś zalogowany(a) jako <a href="http://weeia.edu.p.lodz.pl/user/profile.php?id=7365" title="Zobacz profil">Mateusz Sikorski</a> (<a href="http://weeia.edu.p.lodz.pl/login/logout.php?sesskey=LjisMwSMdY">Wyloguj</a>)</div><div class="langmenu"><form method="get" action="http://weeia.edu.p.lodz.pl/mod/assignment/view.php" id="single_select_f532daf3e7f2901"><div><input name="id" value="2689" type="hidden"><label for="single_select532daf3e7f2902"><span class="accesshide ">Język</span></label><select id="single_select532daf3e7f2902" class="select autosubmit langmenu" name="lang"><option value="en">English (en)</option><option selected="selected" value="pl">Polski (pl)</option></select><noscript class="inline"><div><input type="submit" value="Wykonaj" /></div></noscript></div></form></div>        </div>
+                </div>
+    <div class="logoSpace clearfix">
+      <div class="logo">
+        <img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/bgBannerLeft.jpg" alt="logo">
+      </div>
+      <div id="logoRight">
+        <img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/bgBannerWikamp.jpg" alt="wikamp">
+      </div>
+    </div>
+
+ <div class="myclear"></div>
+              <div class="topMenu">
+          <ul>
+	<li><a href="http://weeia.edu.p.lodz.pl/">start</a></li>
+	<li><a href="http://weeia.p.lodz.pl/">wydział</a></li>
+	<li><a href="http://weeia.edu.p.lodz.pl/course/index.php">przedmioty</a></li>
+	<li><a target="_new" href="http://poczta.p.lodz.pl/">sprawdź pocztę</a></li>
+	<li><a target="_new" href="https://webdziekanat.p.lodz.pl/login">WebDziekanat</a></li>
+	<li><a href="https://virtul.p.lodz.pl/login">virTUL</a></li>
+</ul>          <div class="rightTop"></div>
+        </div>
+      
+      
+              <div style="margin-left: 224px; position: relative; z-index: 100;" class="navbar clearfix">
+          <div class="breadcrumb"><span class="accesshide">Ścieżka do strony</span><ul role="navigation"><li><a href="http://weeia.edu.p.lodz.pl/">Strona główna</a></li><li> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">►</span> <a href="http://weeia.edu.p.lodz.pl/my/">Moje przedmioty</a></li><li> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">►</span> <a href="http://weeia.edu.p.lodz.pl/course/index.php?categoryid=6">Informatyka</a></li><li> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">►</span> <a href="http://weeia.edu.p.lodz.pl/course/index.php?categoryid=34">Studia niestacjonarne II stopnia</a></li><li> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">►</span> <a title="Programowanie w językach skryptowych - zaoczne" href="http://weeia.edu.p.lodz.pl/course/view.php?id=1156">PwJS - zaoczne</a></li><li> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">►</span> <span tabindex="0">Zjazd 3</span></li><li> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">►</span> <a title="Zadanie (2.2)" href="http://weeia.edu.p.lodz.pl/mod/assignment/view.php?id=2689">...rium 3b - w domu - przetwarzanie plików w Pythonie</a></li></ul></div>
+          <div class="navbutton"> </div>
+        </div>
+      
+
+    <div style="margin-top: -43px;" id="page-content">
+        <div id="region-main-box">
+            <div id="region-post-box">
+
+                <div id="region-main-wrap">
+                    <div style="padding-top: 63px;" id="region-main">
+                        <div class="region-content">
+                                                        <div role="main"><span id="maincontent"></span><div class="reportlink"></div><div class="clearer"></div><div id="intro" class="ccbox box generalbox boxaligncenter wrap wraplevel1"><div class="no-overflow"><h2>Zadanie 1:</h2>
+<p>Napisz program, który zapisuje do HTML w postaci listy wypunktowanej 
+(&lt;ul&gt;) drzewo katalogowe (rekursywnie z podkatalogami)</p>
+<h2>Zadanie 2.</h2>
+<p>Zapoznaj się z biublioteką przetwarzania obrazów PIL</p>
+<p>http://www.pythonware.com/products/pil/</p>
+<p>http://www.pythonware.com/library/pil/handbook/image.htm</p>
+<p>Zakładamy, że w katalogu (załóżmy, nazwa katalogu to c:\wakacje2013\ znajdują się zdjęcia w formacie JPG. Przykładowo takie:</p>
+<p>DSC05712.JPG, DSC05714.JPG, DSC05716.JPG, DSC05718.JPG, DSC05720.JPG, DSC05721.JPG</p>
+<p>&nbsp;Wykonaj plik HTML będący galerią zdjęć z użyciem miniaturek.</p>
+<p>Plik ma wyglądać tak:</p>
+<pre id="yui_3_9_1_2_1395435447020_603">&lt;HTML&gt;
+  &lt;HEAD&gt;&lt;TITLE&gt;ferie2013&lt;/TITLE&gt;&lt;/HEAD&gt; 
+  &lt;BODY&gt;&lt;H1&gt;Wakacje2013&lt;/H1&gt;<br>    &lt;A HREF="DSC05712.JPG"&gt;&lt;IMG SRC="DSC05712.ICO.JPG"&gt;&lt;/A&gt;<br>    &lt;A HREF="DSC05714.JPG"&gt;&lt;IMG SRC="DSC05714.ICO.JPG"&gt;&lt;/A&gt;<br>    &lt;A HREF="DSC05716.JPG"&gt;&lt;IMG SRC="DSC05716.ICO.JPG"&gt;&lt;/A&gt;<br>    &lt;A HREF="DSC05718.JPG"&gt;&lt;IMG SRC="DSC05718.ICO.JPG"&gt;&lt;/A&gt;<br>    &lt;A HREF="DSC05720.JPG"&gt;&lt;IMG SRC="DSC05720.ICO.JPG"&gt;&lt;/A&gt;<br>    &lt;A HREF="DSC05721.JPG"&gt;&lt;IMG SRC="DSC05721.ICO.JPG"&gt;&lt;/A&gt;<br>&lt;/BODY&gt;&lt;/HTML&gt;</pre>
+<p>Z każdego pliku należy utworzyć miniaturę o rozdzielczości 128x128 pikseli. Miniaturę tworzymy tak:</p>
+<p>a) metodą&nbsp;<strong>resize</strong>&nbsp;skalujemy obraz tak, aby mniejszy z wymiarów był 128.</p>
+<p>b) metodą&nbsp;<strong>crop</strong>&nbsp;wycinamy obcinamy marginesy, tak, aby pozostał obraz 128x128.</p>
+<h2>Zadanie 3</h2>
+<p>Napisz program, który będzie czytał plik konfiguracyjny Total 
+Commandera wincmd.ini file. It is a file from Total Commander program 
+and:<br>a) wypisze wszystkie sekcje historii plików<br>b) Usunie wszystkie klucze z historii plików<br>c) Przy uzyciu pickle utrwali zawartość tej konfiguracji.</p>
+<h2>Zadanie 4</h2>
+<p>Użyj modułów csv i struct</p>
+<p>a) W Excelu utwórz arkusz z kolumnami<br>nr_indeksu Imie Nazwisko Ocena Data</p>
+<p>Poniżej wpisz przykładową listę studentów<br>Przeczytaj plik jako CSV<br>b) używając obiektów Pythona: csv.reader, csv.writer, csv.DictReader posortuj plik wg dowolnej z kolumn i z powrotem zapisz.<br>c)
+ używając obiektów Pythona struct.pack, struct.unpack, struct.calcsize 
+zapisz zawartość pliku jako plik rekordowy. Numer indeksu to liczba 
+całkowita, imię to string (20), nazwisko string (30), ocena to float, 
+data to string (10).</p>
+<p>Zadanie 5</p>
+<p>Używjąc modułu sqlite3 skonwetuj zserializowany plik z zadania 4 do bazy sqlite</p></div></div><div id="dates" class="ccbox box generalbox boxaligncenter"><table><tbody><tr><td class="c0">Dostępne od:</td>    <td class="c1">sobota, 22 marca 2014, 14:00 </td></tr><tr><td class="c0">Termin oddania:</td>    <td class="c1">sobota, 29 marca 2014, 19:00 </td></tr></tbody></table></div><h3 class="main">Wersja robocza oddawanego zadania</h3><div id="userfiles" class="ccbox box generalbox boxaligncenter nofiles">Żaden plik nie został przesłany</div><div class="singlebutton"><form method="get" action="http://weeia.edu.p.lodz.pl/mod/assignment/type/upload/upload.php"><div><input value="Prześlij pliki" type="submit"><input name="contextid" value="26839" type="hidden"><input name="userid" value="7365" type="hidden"></div></form></div></div>                                                    </div>
+                    </div>
+                </div>
+
+                                <div style="padding-top: 4px;" id="region-pre" class="block-region">
+                    <div class="region-content">
+                        <a href="#sb-1" class="skip-block">Pomiń Nawigacja</a><div id="inst12360" class="block_navigation  block" role="navigation" aria-labelledby="instance-12360-header"><div class="wrap"><div class="header"><div class="bt"><div> </div></div><div class="i1"><div class="i2"><div class="i3"><div id="yui_3_9_1_2_1395502917067_198" class="title"><div class="block_action"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/switch_minus.gif" class="block-hider-hide" tabindex="0" alt="Ukryj blok Nawigacja" title="Ukryj blok Nawigacja"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/switch_plus.gif" class="block-hider-show" tabindex="0" alt="Pokaż blok Nawigacja" title="Pokaż blok Nawigacja"></div><h2 id="instance-12360-header">Nawigacja</h2></div></div></div></div></div><div class="i1"><div class="i2"><div class="i3"><div class="content"><ul class="block_tree list"><li class="type_unknown depth_1 contains_branch" aria-expanded="true"><p class="tree_item branch canexpand navigation_node"><a href="http://weeia.edu.p.lodz.pl/">Strona główna</a></p><ul><li class="type_setting depth_2 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/my/"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Moja strona domowa</a></p></li>
+<li class="type_course depth_2 collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><span title="WEEIA" tabindex="0">Strony</span></p><ul><li class="type_custom depth_3 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/blog/index.php?courseid=0"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Blogi strony</a></p></li>
+<li class="type_custom depth_3 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/badges/view.php?type=1"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Strona odznak</a></p></li>
+<li class="type_custom depth_3 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/tag/search.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Tagi</a></p></li>
+<li class="type_custom depth_3 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/calendar/view.php?view=month"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Kalendarz</a></p></li>
+<li class="type_activity depth_3 item_with_icon"><p class="tree_item leaf hasicon"><a title="Forum" href="http://weeia.edu.p.lodz.pl/mod/forum/view.php?id=1"><img alt="Forum" class="smallicon navicon" title="Forum" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/icon.png">Aktualności</a></p></li></ul></li>
+<li class="type_user depth_2 collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><span tabindex="0">Mój profil</span></p><ul><li class="type_custom depth_3 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/user/profile.php?id=7365"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Zobacz profil</a></p></li>
+<li class="type_custom depth_3 collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><span tabindex="0">Wpisy forum</span></p><ul><li class="type_custom depth_4 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/mod/forum/user.php?id=7365"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Wpisy</a></p></li>
+<li class="type_custom depth_4 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/mod/forum/user.php?id=7365&amp;mode=discussions"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Dyskusje</a></p></li></ul></li>
+<li class="type_unknown depth_3 collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><span tabindex="0">Blogi</span></p><ul><li class="type_custom depth_4 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/blog/index.php?userid=7365"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Zobacz wszystkie moje wpisy</a></p></li>
+<li class="type_custom depth_4 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/blog/edit.php?action=add"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Dodaj nowy wpis</a></p></li>
+<li class="type_setting depth_4 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/rss/file.php/1/142425905567f7e7faa4cb800f48ca5c/blog/user/7365/rss.xml"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/rss.svg">Źródło RSS blogu</a></p></li></ul></li>
+<li class="type_setting depth_3 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/user/files.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Moje prywatne pliki</a></p></li>
+<li class="type_setting depth_3 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/badges/mybadges.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Moje odznaki</a></p></li></ul></li>
+<li class="type_system depth_2 contains_branch" aria-expanded="true"><p class="tree_item branch"><span tabindex="0">Bieżący kurs</span></p><ul><li class="type_course depth_3 contains_branch" aria-expanded="true"><p class="tree_item branch canexpand"><a title="Programowanie w językach skryptowych - zaoczne" href="http://weeia.edu.p.lodz.pl/course/view.php?id=1156">PwJS - zaoczne</a></p><ul><li class="type_unknown depth_4 collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><a href="http://weeia.edu.p.lodz.pl/user/index.php?id=1156">Uczestnicy</a></p><ul><li class="type_custom depth_5 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/blog/index.php?courseid=1156"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Blogi kursu</a></p></li>
+<li class="type_user depth_5 collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><a href="http://weeia.edu.p.lodz.pl/user/view.php?id=7365&amp;course=1156">Mateusz Sikorski</a></p><ul><li class="type_custom depth_6 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/user/view.php?id=7365&amp;course=1156"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Zobacz profil</a></p></li>
+<li class="type_custom depth_6 collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><span tabindex="0">Wpisy forum</span></p><ul><li class="type_custom depth_7 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/mod/forum/user.php?id=7365&amp;course=1156"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Wpisy</a></p></li>
+<li class="type_custom depth_7 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/mod/forum/user.php?id=7365&amp;course=1156&amp;mode=discussions"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Dyskusje</a></p></li></ul></li>
+<li class="type_unknown depth_6 collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><span tabindex="0">Blogi</span></p><ul><li class="type_custom depth_7 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/blog/index.php?userid=7365"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Zobacz wszystkie moje wpisy</a></p></li>
+<li class="type_custom depth_7 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/blog/edit.php?action=add"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Dodaj nowy wpis</a></p></li>
+<li class="type_setting depth_7 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/rss/file.php/1/142425905567f7e7faa4cb800f48ca5c/blog/user/7365/rss.xml"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/rss.svg">Źródło RSS blogu</a></p></li></ul></li>
+<li class="type_setting depth_6 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/user/files.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Moje prywatne pliki</a></p></li>
+<li class="type_setting depth_6 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/badges/mybadges.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Moje odznaki</a></p></li></ul></li></ul></li>
+<li class="type_unknown depth_4 collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><span tabindex="0">Odznaki</span></p><ul><li class="type_setting depth_5 item_with_icon"><p class="tree_item leaf hasicon"><a href="http://weeia.edu.p.lodz.pl/badges/view.php?type=2&amp;id=1156"><img alt="Odznaki kursu" class="smallicon navicon" title="Odznaki kursu" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/badge.svg">Odznaki kursu</a></p></li></ul></li>
+<li class="type_structure depth_4 collapsed contains_branch" aria-expanded="false"><p data-loaded="0" data-expandable="1" class="tree_item branch" id="expandable_branch_30_2909"><span tabindex="0">Główne składowe</span></p></li>
+<li class="type_structure depth_4 collapsed contains_branch" aria-expanded="false"><p data-loaded="0" data-expandable="1" class="tree_item branch" id="expandable_branch_30_5016"><span tabindex="0">Zjazd 1</span></p></li>
+<li class="type_structure depth_4 collapsed contains_branch" aria-expanded="false"><p data-loaded="0" data-expandable="1" class="tree_item branch" id="expandable_branch_30_5017"><span tabindex="0">Zjazd 2</span></p></li>
+<li class="type_structure depth_4 contains_branch" aria-expanded="true"><p class="tree_item branch"><span tabindex="0">Zjazd 3</span></p><ul><li class="type_activity depth_5 item_with_icon"><p class="tree_item leaf hasicon"><a title="Plik" href="http://weeia.edu.p.lodz.pl/mod/resource/view.php?id=2686"><img alt="Plik" class="smallicon navicon" title="Plik" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/powerpoint-24.png">PwJS - wykład 4 - Struktury danych w Pythonie</a></p></li>
+<li class="type_activity depth_5 item_with_icon"><p class="tree_item leaf hasicon"><a title="Plik" href="http://weeia.edu.p.lodz.pl/mod/resource/view.php?id=2687"><img alt="Plik" class="smallicon navicon" title="Plik" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/powerpoint-24.png">PwJS - Wykład 5 - pliki i bazy danych w Pythonie</a></p></li>
+<li class="type_activity depth_5 item_with_icon"><p class="tree_item leaf hasicon"><a title="Zadanie (2.2)" href="http://weeia.edu.p.lodz.pl/mod/assignment/view.php?id=2688"><img alt="Zadanie (2.2)" class="smallicon navicon" title="Zadanie (2.2)" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/icon_002.png">Laboratorium 3a - na zajęciach</a></p></li>
+<li class="type_activity depth_5 item_with_icon current_branch"><p class="tree_item leaf hasicon active_tree_node"><a title="Zadanie (2.2)" href="http://weeia.edu.p.lodz.pl/mod/assignment/view.php?id=2689"><img alt="Zadanie (2.2)" class="smallicon navicon" title="Zadanie (2.2)" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/icon_002.png">...rium 3b - w domu - przetwarzanie plików w Pythonie</a></p></li></ul></li>
+<li class="type_structure depth_4 collapsed contains_branch" aria-expanded="false"><p data-loaded="0" data-expandable="1" class="tree_item branch" id="expandable_branch_30_5019"><span tabindex="0">Zjazd 4</span></p></li>
+<li class="type_structure depth_4 collapsed contains_branch" aria-expanded="false"><p data-loaded="0" data-expandable="1" class="tree_item branch" id="expandable_branch_30_5020"><span tabindex="0">Zjazd 5</span></p></li>
+<li class="type_structure depth_4 collapsed contains_branch" aria-expanded="false"><p data-loaded="0" data-expandable="1" class="tree_item branch" id="expandable_branch_30_5021"><span tabindex="0">Kolokwium</span></p></li></ul></li></ul></li>
+<li class="type_system depth_2 collapsed contains_branch" aria-expanded="false"><p data-loaded="0" data-expandable="1" class="tree_item branch" id="expandable_branch_0_mycourses"><a href="http://weeia.edu.p.lodz.pl/my/">Moje przedmioty</a></p></li></ul></li></ul></div></div></div></div><div class="bb"><div> </div></div></div></div><span id="sb-1" class="skip-block-to"></span><a href="#sb-2" class="skip-block">Pomiń Administracja</a><div id="inst12361" class="block_settings  block last_block" role="navigation" aria-labelledby="instance-12361-header"><div class="wrap"><div class="header"><div class="bt"><div> </div></div><div class="i1"><div class="i2"><div class="i3"><div id="yui_3_9_1_2_1395502917067_218" class="title"><div class="block_action"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/switch_minus.gif" class="block-hider-hide" tabindex="0" alt="Ukryj blok Administracja" title="Ukryj blok Administracja"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/switch_plus.gif" class="block-hider-show" tabindex="0" alt="Pokaż blok Administracja" title="Pokaż blok Administracja"></div><h2 id="instance-12361-header">Administracja</h2></div></div></div></div></div><div class="i1"><div class="i2"><div class="i3"><div class="content"><div id="settingsnav" class="ccbox box block_tree_box wrap wraplevel1"><ul class="block_tree list"><li class="type_course collapsed contains_branch" aria-expanded="false"><p class="tree_item branch root_node"><span tabindex="0">Administracja kursem</span></p><ul><li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://weeia.edu.p.lodz.pl/grade/report/index.php?id=1156"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/grades.gif">Oceny</a></p></li></ul></li>
+<li class="type_unknown collapsed contains_branch" aria-expanded="false"><hr><p class="tree_item branch root_node" id="usersettings"><span tabindex="0">Ustawienia mojego profilu</span></p><ul><li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://weeia.edu.p.lodz.pl/user/edit.php?id=7365&amp;course=1156"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Modyfikuj profil</a></p></li>
+<li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://weeia.edu.p.lodz.pl/login/change_password.php?id=1156"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Zmień hasło</a></p></li>
+<li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://weeia.edu.p.lodz.pl/user/managetoken.php?sesskey=LjisMwSMdY"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Klucze zabezpieczeń</a></p></li>
+<li class="type_unknown collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><span tabindex="0">Blogi</span></p><ul><li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://weeia.edu.p.lodz.pl/blog/preferences.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Ustawienia</a></p></li>
+<li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://weeia.edu.p.lodz.pl/blog/external_blogs.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Zewnętrzne blogi</a></p></li>
+<li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://weeia.edu.p.lodz.pl/blog/external_blog_edit.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Rejestruj na zewnętrznym blogu</a></p></li></ul></li>
+<li class="type_unknown collapsed contains_branch" aria-expanded="false"><p class="tree_item branch"><span tabindex="0">Odznaki</span></p><ul><li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://weeia.edu.p.lodz.pl/badges/preferences.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Ustawienia</a></p></li>
+<li class="type_setting collapsed item_with_icon"><p class="tree_item leaf"><a href="http://weeia.edu.p.lodz.pl/badges/mybackpack.php"><img alt="" class="smallicon navicon" title="" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/navigationitem.svg">Ustawienia plecaka</a></p></li></ul></li></ul></li></ul></div></div></div></div></div><div class="bb"><div> </div></div></div></div><span id="sb-2" class="skip-block-to"></span>                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="myclear"></div>
+    
+    <div id="page-footer" class="clearfix">
+      <div class="lFooter"></div>
+      <div class="footerContent">
+        <ul>
+	<li><a href="http://weeia.edu.p.lodz.pl/">start</a>|</li>
+	<li><a href="http://weeia.p.lodz.pl/">wydział</a>|</li>
+	<li><a href="http://weeia.edu.p.lodz.pl/course/index.php">przedmioty</a>|</li>
+	<li><a target="_new" href="http://poczta.p.lodz.pl/">sprawdź pocztę</a>|</li>
+	<li><a target="_new" href="https://webdziekanat.p.lodz.pl/login">WebDziekanat</a>|</li>
+	<li><a href="https://virtul.p.lodz.pl/login">virTUL</a></li>
+</ul>      </div>
+      <div class="rFooter"></div>
+      <div class="copy">
+        copyright © 2010 all rights reserved 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        powered by <a href="http://moodle.org/"><strong>[moodle]</strong></a>
+      </div>
+                </div>
+
+   <div class="myclear"></div>
+  </div> <!-- END #page -->
+
+</div> <!-- END #page-wrapper -->
+
+
+<div id="page-footer-bottom">
+
+
+</div>
+
+
+<script type="text/javascript" src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/assignment.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Ostatnia modyfikacja","name":"Nazwa","error":"B\u0142\u0105d","info":"Informacja","viewallcourses":"Zobacz wszystkie przedmioty","morehelp":"Wi\u0119cej pomocy","loadinghelp":"\u0141adowanie ...","cancel":"Anuluj","yes":"Tak"},"repository":{"type":"Typ","size":"Rozmiar","invalidjson":"Nieprawid\u0142owy ci\u0105g jSON","nofilesattached":"Nie za\u0142\u0105czono plik\u00f3w","filepicker":"Wyb\u00f3r plik\u00f3w","logout":"Wyloguj si\u0119","nofilesavailable":"Brak dost\u0119pnych plik\u00f3w","norepositoriesavailable":"Niestety, \u017cadne z istniej\u0105cych repozytori\u00f3w nie mo\u017ce zawiera\u0107 plik\u00f3w w wymaganym formacie.","fileexistsdialogheader":"Plik istnieje","fileexistsdialog_editor":"Plik o wybranej nazwie zosta\u0142 ju\u017c za\u0142\u0105czony do tekstu, kt\u00f3ry edytujesz.","fileexistsdialog_filemanager":"Plik o wybranej nazwie ju\u017c zosta\u0142 do\u0142\u0105czony","renameto":"Zmie\u0144 nazw\u0119 na","referencesexist":"Istnieje {$a} skr\u00f3t\u00f3w, kt\u00f3re wykorzystuj\u0105 ten plik jako \u017ar\u00f3d\u0142o.","select":"Wybierz"},"block":{"addtodock":"Zadokuj","undockitem":"Od\u0142\u0105cz t\u0105 pozycj\u0119","dockblock":"Zadokuj blok {$a}","undockblock":"Od\u0142\u0105cz blok {$a}","undockall":"Od\u0142\u0105cz wszystkie","hidedockpanel":"Ukryj panel dokowania","hidepanel":"Ukryj panel"},"langconfig":{"thisdirectionvertical":"btt"},"admin":{"confirmation":"Potwierdzenie"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var navtreeexpansions12360 = [{"id":"expandable_branch_30_2909","key":"2909","type":30},{"id":"expandable_branch_30_5016","key":"5016","type":30},{"id":"expandable_branch_30_5017","key":"5017","type":30},{"id":"expandable_branch_30_5019","key":"5019","type":30},{"id":"expandable_branch_30_5020","key":"5020","type":30},{"id":"expandable_branch_30_5021","key":"5021","type":30},{"id":"expandable_branch_0_mycourses","key":"mycourses","type":0}];
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+YUI().use('node', function(Y) {
+M.util.load_flowplayer();
+setTimeout("fix_column_widths()", 20);
+M.yui.galleryversion="2010.04.08-12-35";Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+M.yui.galleryversion="2010.04.08-12-35";Y.use("core_dock","moodle-block_navigation-navigation",function() {M.block_navigation.init_add_tree({"id":"12360","instance":"12360","candock":false,"courselimit":"20","expansionlimit":0});
+});
+M.yui.galleryversion="2010.04.08-12-35";Y.use("core_dock","moodle-block_navigation-navigation",function() {M.block_navigation.init_add_tree({"id":"12361","instance":"12361","candock":false});
+});
+M.util.help_popups.setup(Y);
+M.yui.galleryversion="2010.04.08-12-35";Y.use("moodle-core-popuphelp",function() {M.core.init_popuphelp();
+});
+M.yui.galleryversion="2010.04.08-12-35";Y.use("moodle-core-formautosubmit",function() {M.core.init_formautosubmit({"selectid":"single_select532daf3e7f2902","nothing":false});
+});
+M.util.init_block_hider(Y, {"id":"inst12360","title":"Nawigacja","preference":"block12360hidden","tooltipVisible":"Ukryj blok Nawigacja","tooltipHidden":"Poka\u017c blok Nawigacja"});
+M.util.init_block_hider(Y, {"id":"inst12361","title":"Administracja","preference":"block12361hidden","tooltipVisible":"Ukryj blok Administracja","tooltipHidden":"Poka\u017c blok Administracja"});
+
+});
+//]]>
+</script>
+<!-- Moodle Bar V1.1 (Facebook style navigation bar for use in Moodle) Lewis Carr (www.lewiscarr.co.uk) -->
+<!-- Feel free to modify, re-use,hack etc.. -->
+<!-- I will be making this better when time allows -->
+<!-- You can seperate the CSS below and put the code in your theme css if you wish -->
+<!-- Simply comment out the items you don't want to appear in your Moodle bar, or add your own -->
+<!-- See the readme (instructions.txt) for installation help -->
+
+<!-- Moodle Bar main div starts here -->
+<div id="moodlebarcoursesearch">
+<form name="form1" method="get" action="http://weeia.edu.p.lodz.pl/course/search.php" id="form1"><input name="search" id="coursesearchbox" type="text"> <input value="Courses" type="submit"></form>
+</div>
+<!-- Creates the container that holds it all together -->
+<div id="dockbottom">
+<div id="dockbottom-inner" class="clear-block">
+<div class="dockleft-block"><!-- Left block content starts -->
+<a class="tooltip" href="http://weeia.edu.p.lodz.pl/my/"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/user.png" title="MyMoodle"><span>MyMoodle Page</span></a><a class="tooltip" href="http://weeia.edu.p.lodz.pl/user/view.php"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/profile.png" title="My Profile Page"><span>My Profile Page</span></a><a class="tooltip" href="http://weeia.edu.p.lodz.pl/calendar/view.php"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/calendar.png" title="My Calendar"><span>My Calendar</span></a><a class="tooltip" href="http://weeia.edu.p.lodz.pl/blog/"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/blog.png" title="Blogs"><span>Blogs</span></a><a class="tooltip" href="http://weeia.edu.p.lodz.pl/blog/edit.php?action=add"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/blogadd.png" title="Add a blog entry"><span>Add a blog entry</span></a><a class="tooltip" href="http://weeia.edu.p.lodz.pl/tag/"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/tags.png" title="Tags"><span>View all tags</span></a><a class="tooltip" href="javascript:toggleLayer('moodlebarcoursesearch');"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/search.png" title="Search Courses"><span>Search Courses</span></a>
+<!-- Search Icon -->
+
+<!-- Left block content end -->
+
+</div>
+
+
+<div class="dockmiddle-block"><!-- Middle block content starts -->
+<!-- Online users code starts here -->
+<a href="http://weeia.edu.p.lodz.pl/"><b>http://weeia.edu.p.lodz.pl</b></a><!-- Online users code ends here -->
+<!-- Messages waiting code starts here (checks to see if messaging is disabled first) -->
+<!-- Messages waiting code ends here -->
+<!-- Middle block content ends --></div>
+<div class="dockright-block"><!-- Right block content starts -->
+<div class="logininfo">Jesteś zalogowany(a) jako <a href="http://weeia.edu.p.lodz.pl/user/profile.php?id=7365" title="Zobacz profil">Mateusz Sikorski</a> (<a href="http://weeia.edu.p.lodz.pl/login/logout.php?sesskey=LjisMwSMdY">Wyloguj</a>)</div><!-- Right block content ends --></div>
+</div>
+</div>
+
+
+<div id="dock" role="menubar" class="dock dock_left_vertical nothingdocked"><div id="yui_3_9_1_2_1395502917067_39" class="buttons_container"><div class="dockeditem_container"></div><div class="controls"><img src="PwJS%20-%20zaoczne%20%20Zadanie%20%282.2%29%20%20Laboratorium%203b%20-%20w%20domu%20-%20przetwarzanie%20plik%C3%B3w%20w%20Pythonie_pliki/dock_to_block.svg" alt="Odłącz wszystkie" title="Odłącz wszystkie" tabindex="0"></div></div></div><div style="display: none;"></div></body></html>
